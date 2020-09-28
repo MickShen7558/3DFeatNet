@@ -10,7 +10,7 @@
 clear
 addpath('../common')
 
-KITTI_FOLDER = '../../../data_raw/kitti';  % Change this to point at the dataset directory
+KITTI_FOLDER = '../../../../mydata/kitti_velodyne/data_odometry_velodyne/dataset';  % Change this to point at the dataset directory
 OUTPUT_FOLDER = '../../../data/kitti2/processed';
 METERS_PER_POINT_CLOUD = 10;
 
