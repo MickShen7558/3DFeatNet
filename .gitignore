@@ -117,4 +117,3 @@ scrap*
 .DS_Store
 scripts_evaluation/results_*/
 *.mat
-ckpt/
