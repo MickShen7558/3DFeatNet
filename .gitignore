@@ -109,11 +109,9 @@ venv.bak/
 # Pycharm/vscode/my data files
 *.idea/
 *.vscode/
-*results/
 .*
 !/.gitignore
 scrap*
 *~
 .DS_Store
-scripts_evaluation/results_*/
 *.mat
