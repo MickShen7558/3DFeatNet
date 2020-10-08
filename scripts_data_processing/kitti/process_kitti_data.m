@@ -10,12 +10,13 @@
 clear
 addpath('../common')
 
-KITTI_FOLDER = '../../../../mydata/kitti_velodyne/data_odometry_velodyne/dataset';  % Change this to point at the dataset directory
-OUTPUT_FOLDER = '../../../data/kitti2/processed';
+% KITTI_FOLDER = '../../../../mydata/kitti_velodyne/data_odometry_velodyne/dataset';  % Change this to point at the dataset directory
+KITTI_FOLDER = '../../../../data/kitti_sample';  % Change this to point at the dataset directory
+OUTPUT_FOLDER = '../../../../data/kitti2/processed';
 METERS_PER_POINT_CLOUD = 10;
 
 %% Check datasets
-datasets = dir(fullfile(KITTI_FOLDER, 'poses'));
+datasets = dir(fullfile(KITTI_FOLDER, 'poses'));  % storing the poses
 datasets = {datasets(endsWith({datasets.name}, '.txt')).name};
 for iSet = 1 : length(datasets)
     datasets{iSet} = datasets{iSet}(1:end-4);
@@ -39,6 +40,7 @@ for iSet = 1 : length(datasets)
     scans = zeros(numScans,1);  % 0-based indexing as per kitti
     numScansRetained = 1;
 
+    % sample point clouds with distance > 10 m
     while iCur <= numScans
         iCur = find(distTable(iCur, :) > METERS_PER_POINT_CLOUD, 1, 'first');
         iCur = iCur - 1;
