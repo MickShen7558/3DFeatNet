@@ -4,7 +4,7 @@
 addpath('./external');
 
 % clear;
-m = 3;  % Dimensionality of raw data (all datasets are XYZNxNyNz)
+m = 6;  % Dimensionality of raw data (all datasets are XYZNxNyNz)
 DRAW_ALL_PUTATIVE = false;  % If true, will draw all inlier/outlier matches
 MAX_MATCHES = 1000; % Maximum number of inlier+outlier matches to draw
 
